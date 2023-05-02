@@ -25,21 +25,21 @@ export class AuthService {
 
   entrar(userLogin: CredenciaisDTO): Observable<CredenciaisDTO> {
     return this.http.put<CredenciaisDTO>(
-      'https://projetosinergy.herokuapp.com/usuario/logar',
+      'http://localhost:8080/usuario/logar',
       userLogin
     );
   }
 
   cadastrar(user: Usuario): Observable<Usuario> {
     return this.http.post<Usuario>(
-      'https://projetosinergy.herokuapp.com/usuario/salvar',
+      'http://localhost:8080/usuario/salvar',
       user
     );
   }
 
   putUsuario(usuario: Usuario): Observable<Usuario> {
     return this.http.put<Usuario>(
-      'https://projetosinergy.herokuapp.com/usuario/atualizar',
+      'http://localhost:8080/usuario/atualizar',
       usuario,
       this.token
     );
@@ -47,17 +47,17 @@ export class AuthService {
 
   getByIdUsuario(id: number): Observable<Usuario> {
     return this.http.get<Usuario>(
-      `https://projetosinergy.herokuapp.com/usuario/${id}`,
+      `http://localhost:8080/usuario/${id}`,
       this.token
     );
   }
 
   getAllUsuarios(): Observable<Usuario[]> {
-    return this.http.get<Usuario[]>('https://projetosinergy.herokuapp.com/usuario/todos', this.token)
+    return this.http.get<Usuario[]>('http://localhost:8080/usuario/todos', this.token)
   }
 
   deleteUsuario(id: number) {
-    return this.http.delete(`https://projetosinergy.herokuapp.com/usuario/deletar/${id}`, this.token)
+    return this.http.delete(`http://localhost:8080/usuario/deletar/${id}`, this.token)
   }
 
   logado() {
@@ -80,6 +80,6 @@ export class AuthService {
     return ok;
   }
 
-  
+
 
 }

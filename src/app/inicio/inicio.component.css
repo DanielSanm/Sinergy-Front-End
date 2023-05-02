@@ -262,6 +262,10 @@ form .signup-link a:hover {
 .bt-0 {
   border-top-left-radius: 0px;
   border-top-right-radius: 0px;
-  
+
+}
+
+p {
+  text-align: left;
 }
 

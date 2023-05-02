@@ -22,27 +22,27 @@ export class PostagemService {
   }
 
   postPostagem(postagem: Postagem): Observable<Postagem>{
-    return this.http.post<Postagem>('https://projetosinergy.herokuapp.com/postagens/salvar', postagem, this.token)
+    return this.http.post<Postagem>('http://localhost:8080/postagens/salvar', postagem, this.token)
   }
 
   getPostagemById(id: number): Observable<Postagem>{
-    return this.http.get<Postagem>(`https://projetosinergy.herokuapp.com/postagens/${id}`, this.token)
+    return this.http.get<Postagem>(`http://localhost:8080/postagens/${id}`, this.token)
   }
 
   getByTituloPostagem(titulo: string): Observable<Postagem[]>{
-    return this.http.get<Postagem[]>(`https://projetosinergy.herokuapp.com/postagens/titulo/${titulo}`, this.token)
+    return this.http.get<Postagem[]>(`http://localhost:8080/postagens/titulo/${titulo}`, this.token)
   }
 
 
   getAllPostagens(): Observable<Postagem[]> {
-    return this.http.get<Postagem[]>('https://projetosinergy.herokuapp.com/postagens/todos', this.token)
+    return this.http.get<Postagem[]>('http://localhost:8080/postagens/todos', this.token)
   }
 
   putPostagem(postagem: Postagem): Observable<Postagem>{
-    return this.http.put<Postagem>('https://projetosinergy.herokuapp.com/postagens/atualizar', postagem, this.token)
+    return this.http.put<Postagem>('http://localhost:8080/postagens/atualizar', postagem, this.token)
   }
 
   deletePostagem(id: number){
-    return this.http.delete(`https://projetosinergy.herokuapp.com/postagens/deletar/${id}`, this.token)
+    return this.http.delete(`http://localhost:8080/postagens/deletar/${id}`, this.token)
   }
 }

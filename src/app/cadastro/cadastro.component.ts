@@ -17,7 +17,7 @@ export class CadastroComponent implements OnInit {
   tipoUsuario: string;
 
   constructor(
-    private authService: AuthService, 
+    private authService: AuthService,
     private router: Router,
     private alertas: AlertasService
   ) {}
@@ -29,6 +29,7 @@ export class CadastroComponent implements OnInit {
   }
 
   confirmSenha(event: any) {
+
     this.confirmarSenha = event.target.value;
   }
 
@@ -37,6 +38,7 @@ export class CadastroComponent implements OnInit {
   }
 
   cadastrar() {
+
     this.usuario.foto = 'https://cdn-icons-png.flaticon.com/512/74/74472.png'
     if (this.confirmarSenha.length < 8) {
       this.alertas.showAlertWarning('A senha deve ter no minimo 8 caracteres!');
